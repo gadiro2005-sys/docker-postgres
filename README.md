@@ -1,4 +1,4 @@
-# IES_ROMERO_PHP
+# IES_ROMERO_POSTGRES
 
 # 🚗 Práctica Postgres
 
