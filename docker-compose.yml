@@ -1,0 +1,22 @@
+services:
+    #POSTGRES SERVER
+    postgres:
+      platform: linux/amd64
+      restart: always
+      shm_size: 128mb
+      build:
+        context: .
+        dockerfile: postgres/Dockerfile
+      container_name: docker_postgres
+      volumes:
+        - ./postgres/data:/var/lib/postgresql/data
+      environment:
+        POSTGRES_USER: admin
+        POSTGRES_PASSWORD: admin
+        POSTGRES_DB: mydatabase
+      ports:
+        - "5445:5432"
+      networks:
+        - app-network
+networks:
+  app-network:
